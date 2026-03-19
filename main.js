@@ -1,6 +1,9 @@
 // find our elements
 const stageContainer = document.getElementById("stage-container");
 const circleButton = document.getElementById("circle-button");
+const changeRed = document.getElementById("change-red");
+const changeCornflower = document.getElementById("change-cornflower");
+const changeGreenYellow = document.getElementById("change-greenyellow");
 
 // find stage width
 let stageContainerWidth = stageContainer.offsetWidth;
@@ -40,3 +43,18 @@ function drawNewCircle() {
 }
 
 circleButton.addEventListener("click", drawNewCircle);
+
+// change circle colour
+// I chose radio buttons because they allow for a exclusive selection, making user choice limited but certain...
+
+function changeColourRadio(clickEvent) {
+  // find the value of whichever of the radio buttons was clicked
+  let newColour = clickEvent.target.value;
+  // set the new circle colour to that value
+  circleColour = newColour;
+}
+
+// add eventListeners
+changeRed.addEventListener("click", changeColourRadio);
+changeCornflower.addEventListener("click", changeColourRadio);
+changeGreenYellow.addEventListener("click", changeColourRadio);
